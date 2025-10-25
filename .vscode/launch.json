@@ -1,0 +1,38 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+          "name": "(gdb) Debug mapperPass",
+          "type": "cppdbg",
+          "request": "launch",
+          // 替换为你的 opt-12 的完整路径，或者确保它在 $PATH 中
+          "program": "/usr/bin/opt-12",
+          "args": [
+            "-load",
+            // 确保这个路径相对于 "cwd" 是正确的
+            "../build/src/libmapperPass.so",
+            "-mapperPass",
+            // 确保这个路径相对于 "cwd" 是正确的
+            "kernel.bc"
+          ],
+          "stopAtEntry": false,
+          // "cwd" (Current Working Directory) 非常重要
+          // 设置为你平时运行 opt-12 命令的目录
+          "cwd": "/home/elaina/Desktop/cgra/CGRA-Mapper/test", 
+          "environment": [],
+          "externalConsole": false,
+          "MIMode": "gdb", // 在 Mac 上可能是 "lldb"
+          "setupCommands": [
+            {
+              "description": "Enable pretty-printing for gdb",
+              "text": "-enable-pretty-printing",
+              "ignoreFailures": true
+            }
+          ]
+        }
+      ]
+}
