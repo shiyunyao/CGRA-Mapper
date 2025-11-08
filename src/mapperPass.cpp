@@ -306,11 +306,11 @@ namespace {
         auto t1 = Clock::now();
 
         if (heuristicMapping) {
-	  if(incrementalMapping){
+	        if(incrementalMapping){
             II = mapper->incrementalMap(cgra, dfg, II);
             cout << "[Incremental]\n";
-	  }
-	  else{
+	        }
+	        else{
             cout << "[heuristic]\n";
             II = mapper->heuristicMap(cgra, dfg, II, isStaticElasticCGRA);
           }

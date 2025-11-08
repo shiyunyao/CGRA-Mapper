@@ -1,1 +1,1 @@
-opt --loop-unroll --unroll-count=1 -load ../../../build/mapper/libmapperPass.so -mapperPass kernel.bc
+opt-12 --loop-unroll --unroll-count=1 -load ../../../build/src/libmapperPass.so -mapperPass kernel.bc

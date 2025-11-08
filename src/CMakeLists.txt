@@ -38,6 +38,9 @@ set_target_properties(mapperPass PROPERTIES
     COMPILE_FLAGS "-fno-rtti"
 )
 
+find_package(OpenMP REQUIRED)
+target_link_libraries(mapperPass PRIVATE OpenMP::OpenMP_CXX)
+
 # Get proper shared-library behavior (where symbols are not necessarily
 # resolved when the shared library is linked) on OS X.
 if(APPLE)

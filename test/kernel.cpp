@@ -30,9 +30,9 @@ void kernel(float input[], float output[], float coefficient[])
   int i;
   int j = 0;
 
-//  for(j=0; j< NTAPS; ++j) {
+  for(j=0; j< NTAPS; ++j) {
     for (i = 0; i < NTAPS; ++i) {
       output[j] += input[i] * coefficient[i];
     }
-//  }
+  }
 }
