@@ -381,7 +381,7 @@ bool CGRANode::isOccupied(int t_cycle, int t_II) {
   // across all cycles with II interval (populating cycle, cycle+II, etc.).
   // Therefore, checking the specific canonical cycle here is sufficient 
   // and equivalent to checking the entire loop.
-  for (pair<DFGNode*, int> p: *(m_dfgNodesWithOccupyStatus[t_II+(t_cycle)%t_II])){
+  for (pair<DFGNode*, int> p: *(m_dfgNodesWithOccupyStatus[t_II + (t_cycle % t_II)])){
     // If DVFS is supported, the entire tile is occupied before the current multi-cycle operation
     // completes. Otherwise, the next operation can start before the current one completes.
     if (p.second == START_PIPE_OCCUPY or p.second == SINGLE_OCCUPY or m_supportDVFS) {
